@@ -1,7 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            yamlFile pod.yaml
+            yamlFile 'pod.yaml'
             workspaceVolume hostPathWorkspaceVolume('/workspace')
             defaultContainer 'builder'
         }
