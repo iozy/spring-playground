@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent kubernetes {
+        yamlFile pod.yaml
+        workspaceVolume hostPathWorkspaceVolume('/workspace')
+        defaultContainer 'builder'
+    }
 
     triggers {
         pollSCM '* * * * *'
