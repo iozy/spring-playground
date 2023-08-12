@@ -6,6 +6,10 @@ pipeline {
             defaultContainer 'builder'
         }
     }
+    
+    environment {
+        GRADLE_USER_HOME = "/home/jenkins/agent"
+    }
 
     stages {
         stage('Build') {
@@ -16,6 +20,11 @@ pipeline {
         stage('Test') {
             steps {
                 sh './gradlew test'
+            }
+        }
+        stage('Docker') {
+            steps {
+                sh './gradlew docker dockerPush'
             }
         }
     }
