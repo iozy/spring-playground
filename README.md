@@ -12,6 +12,7 @@ An example project to demonstrate:
 
 * JDK 17+
 * Docker
+* Kubernetes
 
 ## Building
 
