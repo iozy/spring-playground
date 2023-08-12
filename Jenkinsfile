@@ -1,13 +1,12 @@
 pipeline {
-    agent kubernetes {
-        yamlFile pod.yaml
-        workspaceVolume hostPathWorkspaceVolume('/workspace')
-        defaultContainer 'builder'
+    agent {
+        kubernetes {
+            yamlFile pod.yaml
+            workspaceVolume hostPathWorkspaceVolume('/workspace')
+            defaultContainer 'builder'
+        }
     }
 
-    triggers {
-        pollSCM '* * * * *'
-    }
     stages {
         stage('Build') {
             steps {
