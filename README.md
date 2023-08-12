@@ -36,14 +36,6 @@ An example project to demonstrate:
 
 `./gradlew dockerStop`
 
-### Deploying to AWS
-
-`./gradlew awsCfnMigrateStack awsCfnWaitStackComplete -PsubnetId=<your-subnet-id> -Pregion=<your-region>`
-
-### Deleting AWS deployment
-
-`./gradlew awsCfnDeleteStack awsCfnWaitStackComplete`
-
 ## Using API
 
 * get all rides - GET [/ride](http://localhost:8080/ride) to get a list of all the rides
