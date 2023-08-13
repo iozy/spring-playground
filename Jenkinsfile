@@ -7,10 +7,6 @@ pipeline {
         }
     }
     
-    environment {
-        GRADLE_USER_HOME = "/home/jenkins/agent"
-    }
-
     stages {
         stage('Build') {
             steps {
