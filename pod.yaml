@@ -14,7 +14,7 @@ spec:
       args:
           - "--insecure-registry=kind-registry:5000"
     - name: builder
-      image: localhost:5001/builder:0.3
+      image: localhost:5001/builder:9
       env:
         - name: DOCKER_HOST
           value: "tcp://localhost:2375"
